@@ -10,14 +10,17 @@
 #define PARTICLE_FILTER_H_
 
 #include "helper_functions.h"
+#include <random>
 
 struct Particle {
 
 	int id;
+	
 	double x;
 	double y;
 	double theta;
 	double weight;
+	
 	std::vector<int> associations;
 	std::vector<double> sense_x;
 	std::vector<double> sense_y;
@@ -29,8 +32,6 @@ class ParticleFilter {
 	
 	// Number of particles to draw
 	int num_particles; 
-	
-	
 	
 	// Flag, if filter is initialized
 	bool is_initialized;
